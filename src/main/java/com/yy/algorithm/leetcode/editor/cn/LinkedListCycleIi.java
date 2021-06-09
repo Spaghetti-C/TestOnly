@@ -62,9 +62,20 @@ package com.yy.algorithm.leetcode.editor.cn;
 public class LinkedListCycleIi {
     public static void main(String[] args) {
         Solution solution = new LinkedListCycleIi().new Solution();
+        ListNode head = new ListNode(3);
+        ListNode listNode = new ListNode(2);
+        ListNode tail = listNode;
+        head.next = tail;
+        tail.next = new ListNode(0);
+        tail = tail.next;
+        tail.next = new ListNode(-4);
+        tail = tail.next;
+        tail.next = listNode;
+
+        System.out.println(solution.detectCycle(head));
     }
 
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
@@ -88,7 +99,25 @@ public class LinkedListCycleIi {
      */
     public class Solution {
         public ListNode detectCycle(ListNode head) {
+            if (head == null || head.next == null) {
+                return null;
+            }
+            ListNode follow = head;
+            ListNode rst = head;
+            head = head.next;
+            while (follow != head) {
+                if (head.next == null || head.next.next == null) {
+                    return null;
+                }
+                follow = follow.next;
+                head = head.next.next;
+            }
 
+            while (follow != rst) {
+                follow = follow.next;
+                rst = rst.next;
+            }
+            return rst;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
