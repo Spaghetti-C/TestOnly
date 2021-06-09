@@ -1,0 +1,4 @@
+com.yy.spi.IOrderPay=\
+com.yy.spi.ShangkeyouImpl,\
+  com.yy.spi.WehotelImpl
+

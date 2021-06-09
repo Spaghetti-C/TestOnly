@@ -1,0 +1,98 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TestOnly:war exploded">
+    <output-path>$PROJECT_DIR$/target/TestOnly</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>TestOnly</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TestOnly" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.meituan.smartka:smartka-client:1.1.4.42-CYQ-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: com.meituan.service.mobile:mtthrift:1.8.7.5" />
+          <element id="library" level="project" name="Maven: com.sankuai.inf:patriot-sdk:1.2.4" />
+          <element id="library" level="project" name="Maven: com.sankuai.inf:patriot-json:1.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+          <element id="library" level="project" name="Maven: com.meituan.service.inf:kms-java-client:0.8.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.11" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.11" />
+          <element id="library" level="project" name="Maven: com.sankuai.octo:mns-invoker:1.9.8" />
+          <element id="library" level="project" name="Maven: com.sankuai.octo:idl-sgagent:1.9.1" />
+          <element id="library" level="project" name="Maven: com.sankuai.octo:idl-common:1.9.0" />
+          <element id="library" level="project" name="Maven: com.dianping.cat:cat-client:1.7.3" />
+          <element id="library" level="project" name="Maven: com.meituan.mtrace:mtrace:1.1.23" />
+          <element id="library" level="project" name="Maven: com.meituan.mtrace:mtrace-instrument-tools:1.0.0" />
+          <element id="library" level="project" name="Maven: com.meituan.mtrace:mtrace-agent:1.1.23" />
+          <element id="library" level="project" name="Maven: com.meituan.mtrace:idl-mtrace:1.1.23" />
+          <element id="library" level="project" name="Maven: com.meituan.mtrace:mtrace-api:1.1.23" />
+          <element id="library" level="project" name="Maven: com.sankuai.meituan:mtconfig-client:1.2.10" />
+          <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" />
+          <element id="library" level="project" name="Maven: jline:jline:0.9.94" />
+          <element id="library" level="project" name="Maven: io.netty:netty:3.7.0.Final" />
+          <element id="library" level="project" name="Maven: org.reflections:reflections:0.9.9" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.2-GA" />
+          <element id="library" level="project" name="Maven: com.dianping.rhino:rhino-client:1.2.4.3" />
+          <element id="library" level="project" name="Maven: com.dianping.rhino:rhino-redis-squirrel:1.2.4.3" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.6" />
+          <element id="library" level="project" name="Maven: org.apache.thrift:libthrift:0.8.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.1.3" />
+          <element id="library" level="project" name="Maven: org.apache.thrift:libfb303:0.8.0" />
+          <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.1.2.6" />
+          <element id="library" level="project" name="Maven: com.facebook.swift:swift-annotations:0.17.0-mt" />
+          <element id="library" level="project" name="Maven: com.facebook.swift:swift-codec:0.17.0-mt" />
+          <element id="library" level="project" name="Maven: com.thoughtworks.paranamer:paranamer:2.5.2" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:annotations:2.0.3" />
+          <element id="library" level="project" name="Maven: com.facebook.swift:swift-generator:0.17.0-mt" />
+          <element id="library" level="project" name="Maven: com.facebook.swift:swift-idl-parser:0.17.0-mt" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr-runtime:3.5" />
+          <element id="library" level="project" name="Maven: org.antlr:stringtemplate:4.0.2" />
+          <element id="library" level="project" name="Maven: io.netty:netty-all:4.0.24.Final" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-jsonSchema:2.9.3" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: com.googlecode.aviator:aviator:4.1.2" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.2" />
+          <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy-all:2.4.17" />
+          <element id="library" level="project" name="Maven: com.meituan.servicecatalog:api-annotations:1.0.3" />
+          <element id="library" level="project" name="Maven: com.dianping.squirrel:squirrel-client:2.3.13" />
+          <element id="library" level="project" name="Maven: com.dianping.lion:lion-client:0.8.7" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-recipes:2.12.0" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.5.2" />
+          <element id="library" level="project" name="Maven: net.spy:spymemcached:2.11.6" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-framework:2.12.0" />
+          <element id="library" level="project" name="Maven: org.apache.curator:curator-client:2.12.0" />
+          <element id="library" level="project" name="Maven: com.caucho:hessian:3.1.5" />
+          <element id="library" level="project" name="Maven: com.dianping.squirrel:hessian:1.1.0" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.54" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:17.0" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.19.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.19.RELEASE" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/TestOnly/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="TestOnly/web/Web" />
+    </root>
+  </artifact>
+</component>
