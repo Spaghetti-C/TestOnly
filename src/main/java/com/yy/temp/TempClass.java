@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
  * @author chenyiqin02
@@ -19,6 +20,12 @@ public class TempClass {
         System.out.println(s.hashCode());
         String sb = "abc";
         System.out.println(sb.hashCode());
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "bb");
+        map.put(2, "s");
+        System.out.println(map);
+        map.remove(1);
+        System.out.println(map);
     }
 
 }

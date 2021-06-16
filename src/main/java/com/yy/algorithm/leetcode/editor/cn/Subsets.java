@@ -34,19 +34,35 @@
 
 package com.yy.algorithm.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Subsets{
+public class Subsets {
     public static void main(String[] args) {
         Solution solution = new Subsets().new Solution();
+        int[] nums = {1, 2, 3};
+        System.out.println(solution.subsets(nums));
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<List<Integer>> subsets(int[] nums) {
 
-        return null;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public List<List<Integer>> subsets(int[] nums) {
+            List<List<Integer>> lists = new ArrayList<>();
+            List<Integer> list = new ArrayList<>();
+            backtrack(nums, 0, lists, list);
+            return lists;
+        }
+
+        private void backtrack(int[] nums, int begin, List<List<Integer>> lists, List<Integer> list) {
+            lists.add(new ArrayList<>(list));
+
+            for (int i = begin; i < nums.length; i++) {
+                list.add(nums[i]);
+                backtrack(nums, i + 1, lists, list);
+                list.remove(list.size() - 1);
+            }
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

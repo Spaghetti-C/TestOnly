@@ -99,19 +99,18 @@ public class LinkedListCycleIi {
      */
     public class Solution {
         public ListNode detectCycle(ListNode head) {
-            if (head == null || head.next == null) {
+            if (head == null) {
                 return null;
             }
             ListNode follow = head;
             ListNode rst = head;
-            head = head.next;
-            while (follow != head) {
+            do {
                 if (head.next == null || head.next.next == null) {
                     return null;
                 }
                 follow = follow.next;
                 head = head.next.next;
-            }
+            } while (follow != head);
 
             while (follow != rst) {
                 follow = follow.next;

@@ -85,18 +85,17 @@ public class LinkedListCycle {
      */
     public class Solution {
         public boolean hasCycle(ListNode head) {
-            if (head == null || head.next == null) {
+            if (head == null) {
                 return false;
             }
             ListNode follow = head;
-            head = head.next;
-            while (head != follow) {
+            do {
                 if (head.next == null || head.next.next == null) {
                     return false;
                 }
                 follow = follow.next;
                 head = head.next.next;
-            }
+            } while (head != follow);
             return true;
         }
     }

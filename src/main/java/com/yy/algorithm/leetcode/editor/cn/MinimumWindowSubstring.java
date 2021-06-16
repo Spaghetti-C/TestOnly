@@ -34,17 +34,47 @@
 //frontendQuestionId:76
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class MinimumWindowSubstring{
+
+public class MinimumWindowSubstring {
     public static void main(String[] args) {
         Solution solution = new MinimumWindowSubstring().new Solution();
+        String s = "acbbaca";
+        String t = "aba";
+        System.out.println(solution.minWindow(s, t));
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String minWindow(String s, String t) {
 
-        return null;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String minWindow(String s, String t) {
+            int[] need = new int[128];
+            int[] counts = new int[128];
+            int length = t.length();
+            int count = 0;
+            String res = "";
+            for (int i = 0; i < length; i++) {
+                need[t.charAt(i)]++;
+            }
+            int l = 0;
+            int r = 0;
+            while (r < s.length()) {
+                counts[s.charAt(r)]++;
+                if (counts[s.charAt(r)] <= need[s.charAt(r)]) {
+                    count++;
+                }
+                r++;
+
+                while (count >= length) {
+                    res = res.length() == 0 || (r - l) < res.length() ? s.substring(l, r) : res;
+
+                    counts[s.charAt(l)]--;
+                    count -= counts[s.charAt(l)] >= need[s.charAt(l)] ? 0 : 1;
+                    l++;
+                }
+            }
+
+            return res;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
