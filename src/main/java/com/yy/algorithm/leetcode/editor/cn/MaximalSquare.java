@@ -40,17 +40,35 @@
 //frontendQuestionId:221
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class MaximalSquare{
+
+public class MaximalSquare {
     public static void main(String[] args) {
         Solution solution = new MaximalSquare().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maximalSquare(char[][] matrix) {
 
-        return 0;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int maximalSquare(char[][] matrix) {
+            int m = matrix.length;
+            int n = matrix[0].length;
+            int area = 0;
+            int[][] dp = new int[m][n];
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (matrix[i][j] == '1') {
+                        if (i == 0 || j == 0) {
+                            dp[i][j] = 1;
+                        } else {
+                            dp[i][j] = Math.min(dp[i - 1][j], Math.min(dp[i][j - 1], dp[i - 1][j - 1])) + 1;
+                        }
+                        area = Math.max(area, dp[i][j] * dp[i][j]);
+                    }
+                }
+            }
+
+            return area;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

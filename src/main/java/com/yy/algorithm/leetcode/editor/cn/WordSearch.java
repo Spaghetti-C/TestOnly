@@ -49,17 +49,54 @@
 //frontendQuestionId:79
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class WordSearch{
+
+public class WordSearch {
     public static void main(String[] args) {
         Solution solution = new WordSearch().new Solution();
+        char[][] board = {{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+        String word = "ABCCED";
+        System.out.println(solution.exist(board, word));
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean exist(char[][] board, String word) {
-        //todo
-        return false;
+    class Solution {
+        public boolean exist(char[][] board, String word) {
+            int m = board.length;
+            int n = board[0].length;
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (dfs(board, word, new boolean[m][n], i, j, 0)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private boolean dfs(char[][] board, String word, boolean[][] visited, int x, int y, int wordIndex) {
+            if (wordIndex >= word.length()) {
+                return true;
+            }
+            if (x < 0 || x >= board.length || y < 0 || y >= board[0].length) {
+                return false;
+            }
+            if (visited[x][y]) {
+                return false;
+            }
+            if (board[x][y] != word.charAt(wordIndex)) {
+                return false;
+            }
+
+            visited[x][y] = true;
+            boolean flag = dfs(board, word, visited, x - 1, y, wordIndex + 1)
+                    || dfs(board, word, visited, x + 1, y, wordIndex + 1)
+                    || dfs(board, word, visited, x, y - 1, wordIndex + 1)
+                    || dfs(board, word, visited, x, y + 1, wordIndex + 1);
+            visited[x][y] = false;
+
+            return flag;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

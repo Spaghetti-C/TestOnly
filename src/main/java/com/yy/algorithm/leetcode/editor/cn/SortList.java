@@ -47,9 +47,17 @@ package com.yy.algorithm.leetcode.editor.cn;
 public class SortList {
     public static void main(String[] args) {
         Solution solution = new SortList().new Solution();
+        ListNode head = new ListNode(4);
+        ListNode next = head;
+        next.next = new ListNode(2);
+        next = next.next;
+        next.next = new ListNode(3);
+        next = next.next;
+        next.next = new ListNode(1);
+        solution.sortList(head);
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -79,8 +87,63 @@ public class SortList {
      */
     class Solution {
         public ListNode sortList(ListNode head) {
+            // todo
+            return recursion(head, null);
+        }
 
-            return null;
+        private ListNode recursion(ListNode head, ListNode tail) {
+            if (head == tail) {
+                return head;
+            }
+            ListNode fast = head;
+            ListNode slow = head;
+            while (fast != tail && fast.next != tail) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            ListNode middle = slow.next;
+            ListNode listNode1 = recursion(head, slow);
+            ListNode listNode2 = recursion(middle, tail);
+            return merge(listNode1, listNode2);
+        }
+
+        private ListNode merge(ListNode listNode1, ListNode listNode2) {
+            if (listNode1 == null) {
+                return listNode2;
+            }
+            if (listNode2 == null) {
+                return listNode1;
+            }
+
+            ListNode head;
+            if (listNode1.val > listNode2.val) {
+                head = listNode2;
+                listNode2 = listNode2.next;
+            } else {
+                head = listNode1;
+                listNode1 = listNode1.next;
+            }
+
+            ListNode current = head;
+            while (listNode1 != null && listNode2 != null) {
+                if (listNode1.val > listNode2.val) {
+                    current.next = listNode2;
+                    current = current.next;
+                    listNode2 = listNode2.next;
+                } else {
+                    current.next = listNode1;
+                    current = current.next;
+                    listNode1 = listNode1.next;
+                }
+            }
+
+            if (listNode1 != null) {
+                current.next = listNode1;
+            }
+            if (listNode2 != null) {
+                current.next = listNode2;
+            }
+            return head;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
