@@ -54,7 +54,7 @@ public class SortList {
         next.next = new ListNode(3);
         next = next.next;
         next.next = new ListNode(1);
-        solution.sortList(head);
+        System.out.println(solution.sortList(head));
     }
 
     public static class ListNode {
@@ -92,18 +92,24 @@ public class SortList {
         }
 
         private ListNode recursion(ListNode head, ListNode tail) {
-            if (head == tail) {
+            if (head == null) {
+                return head;
+            }
+            if (head.next == tail) {
+                head.next = null;
                 return head;
             }
             ListNode fast = head;
             ListNode slow = head;
-            while (fast != tail && fast.next != tail) {
+            while (fast != tail) {
                 slow = slow.next;
-                fast = fast.next.next;
+                fast = fast.next;
+                if (fast != tail) {
+                    fast = fast.next;
+                }
             }
-            ListNode middle = slow.next;
             ListNode listNode1 = recursion(head, slow);
-            ListNode listNode2 = recursion(middle, tail);
+            ListNode listNode2 = recursion(slow, tail);
             return merge(listNode1, listNode2);
         }
 
