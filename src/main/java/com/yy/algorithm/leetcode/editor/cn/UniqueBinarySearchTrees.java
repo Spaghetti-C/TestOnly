@@ -29,17 +29,28 @@
 //frontendQuestionId:96
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class UniqueBinarySearchTrees{
+
+public class UniqueBinarySearchTrees {
     public static void main(String[] args) {
         Solution solution = new UniqueBinarySearchTrees().new Solution();
+        System.out.println(solution.numTrees(3));
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int numTrees(int n) {
 
-        return 0;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int numTrees(int n) {
+            int[] dp = new int[n + 1];
+            dp[0] = 1;
+            dp[1] = 1;
+            for (int i = 2; i <= n; i++) {
+                for (int j = 1; j <= i; j++) {
+                    dp[i] += dp[j - 1] * dp[i - j];
+                }
+            }
+
+            return dp[n];
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

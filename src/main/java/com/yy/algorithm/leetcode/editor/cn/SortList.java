@@ -87,7 +87,6 @@ public class SortList {
      */
     class Solution {
         public ListNode sortList(ListNode head) {
-            // todo
             return recursion(head, null);
         }
 
