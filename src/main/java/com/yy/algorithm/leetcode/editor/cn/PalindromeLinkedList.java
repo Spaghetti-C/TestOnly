@@ -55,8 +55,36 @@ public class PalindromeLinkedList {
      */
     class Solution {
         public boolean isPalindrome(ListNode head) {
+            if (head == null) {
+                return true;
+            }
 
-            return false;
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast.next != null && fast.next.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+
+            slow = slow.next;
+            ListNode prev = null;
+            ListNode next = null;
+            while (slow != null) {
+                next = slow.next;
+                slow.next = prev;
+                prev = slow;
+                slow = next;
+            }
+
+            while (prev != null) {
+                if (head.val != prev.val) {
+                    return false;
+                }
+                head = head.next;
+                prev = prev.next;
+            }
+
+            return true;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,42 +1,37 @@
-//给定一个二叉树，检查它是否是镜像对称的。 
+//翻转一棵二叉树。 
 //
-// 
+// 示例： 
 //
-// 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。 
+// 输入： 
 //
-//     1
-//   / \
-//  2   2
-// / \ / \
-//3  4 4  3
-// 
+//      4
+//   /   \
+//  2     7
+// / \   / \
+//1   3 6   9 
 //
-// 
+// 输出： 
 //
-// 但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的: 
+//      4
+//   /   \
+//  7     2
+// / \   / \
+//9   6 3   1 
 //
-//     1
-//   / \
-//  2   2
-//   \   \
-//   3    3
-// 
+// 备注: 
+//这个问题是受到 Max Howell 的 原问题 启发的 ： 
 //
-// 
-//
-// 进阶： 
-//
-// 你可以运用递归和迭代两种方法解决这个问题吗？ 
-// Related Topics 树 深度优先搜索 广度优先搜索 
-// 👍 1409 👎 0
+// 谷歌：我们90％的工程师使用您编写的软件(Homebrew)，但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。 
+// Related Topics 树 深度优先搜索 广度优先搜索 Binary Tree 
+// 👍 892 👎 0
 
-//frontendQuestionId:101
+//frontendQuestionId:226
 
 package com.yy.algorithm.leetcode.editor.cn;
 
-public class SymmetricTree {
+public class InvertBinaryTree {
     public static void main(String[] args) {
-        Solution solution = new SymmetricTree().new Solution();
+        Solution solution = new InvertBinaryTree().new Solution();
     }
 
     public class TreeNode {
@@ -57,7 +52,6 @@ public class SymmetricTree {
             this.right = right;
         }
     }
-
     //leetcode submit region begin(Prohibit modification and deletion)
 
     /**
@@ -76,18 +70,20 @@ public class SymmetricTree {
      * }
      */
     class Solution {
-        public boolean isSymmetric(TreeNode root) {
-            return dfs(root, root);
+        public TreeNode invertTree(TreeNode root) {
+            recursion(root);
+            return root;
         }
 
-        private boolean dfs(TreeNode left, TreeNode right) {
-            if (left == null && right == null) {
-                return true;
+        private void recursion(TreeNode root) {
+            if (root == null) {
+                return;
             }
-            if (left == null || right == null) {
-                return false;
-            }
-            return left.val == right.val && dfs(left.left, right.right) && dfs(left.right, right.left);
+            TreeNode temp = root.left;
+            root.left = root.right;
+            root.right = temp;
+            recursion(root.left);
+            recursion(root.right);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

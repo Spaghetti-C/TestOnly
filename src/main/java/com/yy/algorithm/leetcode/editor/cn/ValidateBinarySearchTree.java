@@ -88,11 +88,10 @@ public class ValidateBinarySearchTree {
      */
     class Solution {
         public boolean isValidBST(TreeNode root) {
-            //todo
-            return dfs(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+            return dfs(root, Long.MIN_VALUE, Long.MAX_VALUE);
         }
 
-        private boolean dfs(TreeNode node, int lower, int upper) {
+        private boolean dfs(TreeNode node, long lower, long upper) {
             if (node == null) {
                 return true;
             }
