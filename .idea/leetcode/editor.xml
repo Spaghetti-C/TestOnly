@@ -43,6 +43,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/BinaryTreeMaximumPathSum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/BinaryTreeMaximumPathSum.java" />
+              <option name="questionId" value="124" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/ClimbingStairs.java">
           <value>
             <LeetcodeEditor>
@@ -96,6 +104,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/FindFirstAndLastPositionOfElementInSortedArray.java" />
               <option name="questionId" value="34" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/FindTheDuplicateNumber.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/FindTheDuplicateNumber.java" />
+              <option name="questionId" value="287" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -355,6 +371,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/MoveZeroes.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/MoveZeroes.java" />
+              <option name="questionId" value="283" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/NextPermutation.java">
           <value>
             <LeetcodeEditor>
@@ -384,6 +408,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PartitionEqualSubsetSum.java" />
               <option name="questionId" value="416" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PerfectSquares.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PerfectSquares.java" />
+              <option name="questionId" value="279" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -435,6 +467,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SearchA2dMatrixIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SearchA2dMatrixIi.java" />
+              <option name="questionId" value="240" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SearchInRotatedSortedArray.java">
           <value>
             <LeetcodeEditor>
@@ -448,6 +488,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SingleNumber.java" />
               <option name="questionId" value="136" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SlidingWindowMaximum.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SlidingWindowMaximum.java" />
+              <option name="questionId" value="239" />
             </LeetcodeEditor>
           </value>
         </entry>

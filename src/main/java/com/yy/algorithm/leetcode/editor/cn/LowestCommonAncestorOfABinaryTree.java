@@ -45,25 +45,52 @@
 //frontendQuestionId:236
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class LowestCommonAncestorOfABinaryTree{
+
+public class LowestCommonAncestorOfABinaryTree {
     public static void main(String[] args) {
         Solution solution = new LowestCommonAncestorOfABinaryTree().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
-}
+    //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            dfs(root, p, q);
+            return res;
+        }
+
+        TreeNode res = null;
+
+        private boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
+            if (root == null) {
+                return false;
+            }
+            boolean left = dfs(root.left, p, q);
+            boolean right = dfs(root.right, p, q);
+            if ((left && right) || ((left || right) && (root.val == p.val || root.val == q.val))) {
+                res = root;
+            }
+            return left || right || root.val == p.val || root.val == q.val;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

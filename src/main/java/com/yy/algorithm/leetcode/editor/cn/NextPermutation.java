@@ -49,11 +49,14 @@
 
 package com.yy.algorithm.leetcode.editor.cn;
 
+import java.util.Arrays;
+
 public class NextPermutation {
     public static void main(String[] args) {
         Solution solution = new NextPermutation().new Solution();
-        int[] nums = {3, 2, 1};
+        int[] nums = {1, 1, 3, 2, 2};
         solution.nextPermutation(nums);
+        System.out.println(Arrays.toString(nums));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
