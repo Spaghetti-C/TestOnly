@@ -91,6 +91,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/DailyTemperatures.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/DailyTemperatures.java" />
+              <option name="questionId" value="739" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/EditDistance.java">
           <value>
             <LeetcodeEditor>
@@ -400,6 +408,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PalindromeLinkedList.java" />
               <option name="questionId" value="234" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PalindromicSubstrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/PalindromicSubstrings.java" />
+              <option name="questionId" value="647" />
             </LeetcodeEditor>
           </value>
         </entry>
