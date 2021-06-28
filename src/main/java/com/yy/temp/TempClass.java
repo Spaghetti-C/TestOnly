@@ -3,9 +3,7 @@ package com.yy.temp;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author chenyiqin02
@@ -26,6 +24,10 @@ public class TempClass {
         System.out.println(map);
         map.remove(1);
         System.out.println(map);
+        String data = "a,b";
+        String[] dataArray = data.split(",");
+        List<String> datas = new ArrayList<>(Arrays.asList(dataArray));
+        datas.remove(0);
     }
 
 }

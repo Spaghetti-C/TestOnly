@@ -235,6 +235,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/LongestIncreasingSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/LongestIncreasingSubsequence.java" />
+              <option name="questionId" value="300" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/LongestPalindromicSubstring.java">
           <value>
             <LeetcodeEditor>
@@ -496,6 +504,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SearchInRotatedSortedArray.java" />
               <option name="questionId" value="33" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SerializeAndDeserializeBinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/algorithm/leetcode/editor/cn/SerializeAndDeserializeBinaryTree.java" />
+              <option name="questionId" value="297" />
             </LeetcodeEditor>
           </value>
         </entry>
