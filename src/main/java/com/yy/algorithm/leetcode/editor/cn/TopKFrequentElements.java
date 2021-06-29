@@ -34,17 +34,44 @@
 //frontendQuestionId:347
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class TopKFrequentElements{
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+
+public class TopKFrequentElements {
     public static void main(String[] args) {
         Solution solution = new TopKFrequentElements().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] topKFrequent(int[] nums, int k) {
 
-        //todo
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int[] topKFrequent(int[] nums, int k) {
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int i = 0; i < nums.length; i++) {
+                map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+            }
+            PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                int num = entry.getKey();
+                int count = entry.getValue();
+                if (queue.size() == k) {
+                    if (queue.peek()[1] < count) {
+                        queue.poll();
+                        queue.add(new int[]{num, count});
+                    }
+                } else {
+                    queue.add(new int[]{num, count});
+                }
+            }
+            int[] res = new int[k];
+            for (int i = 0; i < k; i++) {
+                res[i] = queue.poll()[0];
+            }
+
+            return res;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -57,11 +57,12 @@ public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         Solution solution = new LongestIncreasingSubsequence().new Solution();
         int[] nums = {3, 5, 6, 2, 5, 4, 19, 5, 6, 7, 12};
-        solution.lengthOfLIS(nums);
+        System.out.println(solution.lengthOfLIS(nums));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        // 使用递增栈
         public int lengthOfLIS(int[] nums) {
             int length = nums.length;
             if (length == 0) {
@@ -71,18 +72,21 @@ public class LongestIncreasingSubsequence {
             List<Integer> list = new ArrayList<>();
             list.add(nums[0]);
             for (int i = 1; i < length; i++) {
+                // 数组中数字都大于nums[i]则直接添加到数组
                 if (nums[i] > list.get(list.size() - 1)) {
                     list.add(nums[i]);
                 } else {
                     int l = 0;
                     int r = list.size() - 1;
                     int index = 0;
+                    // 找到下标最小的大于nums[i]的数，进行替换
                     while (l <= r) {
-                        index = (l + r) / 2;
-                        if (nums[i] >= list.get(index)) {
-                            l = index + 1;
+                        int middle = (l + r) / 2;
+                        if (nums[i] > list.get(middle)) {
+                            l = middle + 1;
                         } else {
-                            r = index - 1;
+                            index = middle;
+                            r = middle - 1;
                         }
                     }
                     list.set(index, nums[i]);
