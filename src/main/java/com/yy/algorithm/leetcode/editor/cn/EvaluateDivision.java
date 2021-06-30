@@ -118,8 +118,10 @@ public class EvaluateDivision {
                     break;
                 }
                 for (Pair i : map.getOrDefault(pair.index, new ArrayList<>())) {
-                    resultMap.put(i.index, resultMap.getOrDefault(pair.index, 1.0) * i.value);
-                    queue.add(i);
+                    if (resultMap.get(i.index) == null) {
+                        resultMap.put(i.index, resultMap.getOrDefault(pair.index, 1.0) * i.value);
+                        queue.add(i);
+                    }
                 }
             }
 
