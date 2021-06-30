@@ -27,7 +27,11 @@ public class TempClass {
         String data = "a,b";
         String[] dataArray = data.split(",");
         List<String> datas = new ArrayList<>(Arrays.asList(dataArray));
-        datas.remove(0);
+        Map<Integer, List<String>> lists = new HashMap<>();
+        lists.put(1, datas);
+        datas = new ArrayList<>(Collections.singleton("1"));
+        lists.put(2, datas);
+        System.out.println(lists);
     }
 
 }

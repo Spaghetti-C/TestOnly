@@ -67,6 +67,11 @@ import java.util.*;
 public class EvaluateDivision {
     public static void main(String[] args) {
         Solution solution = new EvaluateDivision().new Solution();
+        List<List<String>> equations = Arrays.asList(Arrays.asList("a", "b"), Arrays.asList("b", "c"));
+        double[] values = {2.0, 3.0};
+        List<List<String>> queries = Arrays.asList(Arrays.asList("a", "c"), Arrays.asList("b", "a"),
+                Arrays.asList("a", "e"), Arrays.asList("a", "a"), Arrays.asList("x", "x"));
+        solution.calcEquation(equations, values, queries);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -83,41 +88,49 @@ public class EvaluateDivision {
                 pairs.add(pair);
                 map.put(start, pairs);
 
-                List<Pair> pairs2 = map.getOrDefault(target, new ArrayList<>());
+                pairs = map.getOrDefault(target, new ArrayList<>());
                 pair = new Pair(start, 1.0 / value);
-                pairs2.add(pair);
-                map.put(target, pairs2);
+                pairs.add(pair);
+                map.put(target, pairs);
             }
 
-
-
+            double[] result = new double[queries.size()];
+            for (int i = 0; i < queries.size(); i++) {
+                result[i] = dfs(map, queries.get(i).get(0), queries.get(i).get(1));
+            }
+            return result;
         }
 
         private double dfs(Map<String, List<Pair>> map, String start, String target) {
-            Stack<Pair> stack = new Stack<>();
+            Queue<Pair> queue = new LinkedList<>();
             List<Pair> pairs = map.get(start);
+            Map<String, Double> resultMap = new HashMap<>();
             if (pairs == null) {
                 return -1.0;
             }
             for (int i = 0; i < pairs.size(); i++) {
-                stack.push(pairs.get(0));
+                queue.add(pairs.get(i));
+                resultMap.put(pairs.get(i).index, pairs.get(i).value);
             }
-            double res = 1.0;
-            while (!stack.empty()) {
-                Pair pair = stack.pop();
+            while (!queue.isEmpty()) {
+                Pair pair = queue.poll();
                 if (pair.index.equals(target)) {
-
                     break;
                 }
+                for (Pair i : map.getOrDefault(pair.index, new ArrayList<>())) {
+                    resultMap.put(i.index, resultMap.getOrDefault(pair.index, 1.0) * i.value);
+                    queue.add(i);
+                }
             }
-//todo
-            return -1.0;
+
+            return resultMap.getOrDefault(target, -1.0);
         }
     }
 
     class Pair {
         String index;
         Double value;
+
         Pair(String index, Double value) {
             this.index = index;
             this.value = value;
