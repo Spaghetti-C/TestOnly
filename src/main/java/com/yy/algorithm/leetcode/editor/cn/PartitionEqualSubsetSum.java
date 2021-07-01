@@ -79,12 +79,12 @@ public class PartitionEqualSubsetSum {
                     }
                 }
             }
-            for (boolean[] booleans : dp) {
-                for (boolean aBoolean : booleans) {
-                    System.out.print(aBoolean + "\t");
-                }
-                System.out.println("");
-            }
+//            for (boolean[] booleans : dp) {
+//                for (boolean aBoolean : booleans) {
+//                    System.out.print(aBoolean + "\t");
+//                }
+//                System.out.println("");
+//            }
 
             return dp[nums.length][sum];
         }
