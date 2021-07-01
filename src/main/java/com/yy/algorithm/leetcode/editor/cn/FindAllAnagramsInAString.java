@@ -44,6 +44,7 @@
 
 package com.yy.algorithm.leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,22 +52,51 @@ import java.util.Map;
 public class FindAllAnagramsInAString{
     public static void main(String[] args) {
         Solution solution = new FindAllAnagramsInAString().new Solution();
+        String s = "baa";
+        String p = "aa";
+        System.out.println(solution.findAnagrams(s, p));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
         // 滑动窗口
     public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> list = new ArrayList<>();
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < p.length(); i++) {
             map.put(p.charAt(i), map.getOrDefault(p.charAt(i), 0) + 1);
         }
 
-        todo
         int count = 0;
-        for (int i = 0; i < s.length(); i++) {
+        int l = 0;
+        int r= 0;
+        while (r < s.length()) {
+            if (l + p.length() == r) {
+                Integer value = map.get(s.charAt(l));
+                if (value != null) {
+                    value++;
+                    if (value > 0) {
+                        count--;
+                    }
+                    map.put(s.charAt(l), value);
+                }
+                l++;
+            }
+            Integer value = map.get(s.charAt(r));
+            if (value != null) {
+                value--;
+                map.put(s.charAt(r), value);
+                if (value >= 0) {
+                    count++;
+                }
+                if (count == p.length()) {
+                    list.add(l);
+                }
+            }
 
+            r++;
         }
 
+        return list;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
