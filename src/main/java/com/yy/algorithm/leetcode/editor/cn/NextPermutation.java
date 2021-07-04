@@ -64,14 +64,14 @@ public class NextPermutation {
         public void nextPermutation(int[] nums) {
             int n = nums.length;
             int base;
-            // 尾部寻找首个不递减元素
+            // 尾部寻找首个不递增元素；举例，38271中的2
             for (base = n - 2; base >= 0; base--) {
                 if (nums[base] < nums[base + 1]) {
                     break;
                 }
             }
 
-            // 找到比不递减元素大的元素进行交换
+            // 找到比不递增元素大的元素进行交换；举例，38271中的7，所以38271 -> 38721
             if (base > -1) {
                 for (int i = n - 1; i >= 0; i--) {
                     if (nums[i] > nums[base]) {
@@ -83,7 +83,7 @@ public class NextPermutation {
                 }
             }
 
-            // 不递减元素后的所有元素逆序
+            // 不递增元素后的所有元素逆序；举例，38721 -> 38712
             int left = base + 1;
             int right = n - 1;
             while (left < right) {
