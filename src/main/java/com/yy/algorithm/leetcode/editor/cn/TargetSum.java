@@ -49,11 +49,34 @@ package com.yy.algorithm.leetcode.editor.cn;
 public class TargetSum{
     public static void main(String[] args) {
         Solution solution = new TargetSum().new Solution();
+        int[] nums = {1,1,1,1,1};
+        int target = 3;
+        System.out.println(solution.findTargetSumWays(nums, target));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int findTargetSumWays(int[] nums, int target) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        if (sum < target || (sum - target) % 2 != 0) {
+            return 0;
+        }
+        int negative = (sum - target) / 2;
+        int[][] dp = new int[nums.length + 1][negative + 1];
+        dp[0][0] = 1;
+        for (int i = 1; i <= nums.length; i++) {
+            for (int j = 0; j <= negative; j++) {
+                if (j < nums[i - 1]) {
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
+                }
+            }
+        }
 
+        return dp[nums.length][negative];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
