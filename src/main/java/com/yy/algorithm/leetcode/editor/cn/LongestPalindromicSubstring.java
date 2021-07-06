@@ -115,6 +115,11 @@ public class LongestPalindromicSubstring {
 
             return res;
         }
+
+        // manacher马拉车算法
+        private String solution3(String s) {
+
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
