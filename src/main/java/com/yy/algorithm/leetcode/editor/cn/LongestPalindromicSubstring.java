@@ -47,19 +47,19 @@
 
 package com.yy.algorithm.leetcode.editor.cn;
 
-import java.util.Arrays;
-
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         Solution solution = new LongestPalindromicSubstring().new Solution();
         System.out.println(solution.longestPalindrome("cbbd"));
+        System.out.println(solution.longestPalindrome("abadd"));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String longestPalindrome(String s) {
 //            return solution1(s);
-            return solution2(s);
+//            return solution2(s);
+            return solution3(s);
         }
 
         // 扩散查找
@@ -118,7 +118,36 @@ public class LongestPalindromicSubstring {
 
         // manacher马拉车算法
         private String solution3(String s) {
+            StringBuilder sb = new StringBuilder();
+            int c = -1;
+            int r = -1;
+            String res = "";
+            for (int i = 0; i < s.length(); i++) {
+                sb.append("#");
+                sb.append(s.charAt(i));
+            }
+            sb.append("#");
+            s = sb.toString();
+            int length = s.length();
+            int[] radius = new int[length];
 
+            for (int i = 0; i < length; i++) {
+                radius[i] = r > i ? Math.min(radius[2 * c - i], r - i) : 0;
+                while (i - radius[i] - 1 >= 0 && i + radius[i] + 1 < length) {
+                    if (s.charAt(i - radius[i] - 1) != s.charAt(i + radius[i] + 1)) {
+                        break;
+                    }
+                    radius[i]++;
+                }
+                if (i + radius[i] > r) {
+                    if (res.length() < radius[i] * 2 + 1) {
+                        res = s.substring(i - radius[i], i + radius[i] + 1);
+                    }
+                    r = i + radius[i];
+                    c = i;
+                }
+            }
+            return res.replace("#", "");
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
