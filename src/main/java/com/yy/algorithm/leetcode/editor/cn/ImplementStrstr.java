@@ -48,17 +48,54 @@
 //frontendQuestionId:28
 
 package com.yy.algorithm.leetcode.editor.cn;
-public class ImplementStrstr{
+
+public class ImplementStrstr {
     public static void main(String[] args) {
         Solution solution = new ImplementStrstr().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int strStr(String haystack, String needle) {
 
-        //todo
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int strStr(String haystack, String needle) {
+            if (needle == null || needle.length() == 0) {
+                return 0;
+            }
+            int[] kmp = kmp(needle);
+            int i = 0;
+            int j = 0;
+
+            while (i < haystack.length() && j < needle.length()) {
+                if (j == -1 || haystack.charAt(i) == needle.charAt(j)) {
+                    i++;
+                    j++;
+                } else {
+                    j = kmp[j];
+                }
+            }
+
+            if (j >= needle.length()) {
+                return i - needle.length();
+            }
+            return -1;
+        }
+
+        private int[] kmp(String needle) {
+            int[] kmp = new int[needle.length()];
+            kmp[0] = -1;
+            int i = 0;
+            int j = -1;
+            while (i < needle.length() - 1) {
+                if (j == -1 || needle.charAt(j) == needle.charAt(i)) {
+                    i++;
+                    j++;
+                    kmp[i] = j;
+                } else {
+                    j = kmp[j];
+                }
+            }
+            return kmp;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
