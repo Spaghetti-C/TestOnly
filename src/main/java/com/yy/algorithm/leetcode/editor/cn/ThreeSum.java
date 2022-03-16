@@ -62,6 +62,7 @@ public class ThreeSum {
             Arrays.sort(nums);
             int m = nums.length;
             for (int i = 0; i < m; i++) {
+                // 通过判断元素是否相等进行排重
                 if (i > 0 && nums[i] == nums[i - 1]) {
                     continue;
                 }
