@@ -1,9 +1,6 @@
 package com.yy.reactor;
 
-import com.google.common.collect.Lists;
 import lombok.SneakyThrows;
-import org.junit.Test;
-import reactor.core.publisher.ConnectableFlux;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.MonoSink;
@@ -12,7 +9,6 @@ import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
